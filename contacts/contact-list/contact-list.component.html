@@ -1,0 +1,67 @@
+<div class="div-center">
+  <div class="row">
+    <div class="col div-center">
+      <h4 class="text-header">Contacts</h4>
+      <hr />
+    </div>
+  </div>
+</div>
+<div class="row mb-2">
+  <div class="col-md-8 pb-2">
+    <input type="search" name="search" #search="ngModel" [(ngModel)]="filter" placeholder="Search Contacts"
+      class="form-control">
+  </div>
+  <div class="col-md-4">
+    <button class="btn btn-block" type="button" (click)="clearSearch()" [disabled]="!filter">
+      <i class="fa fa-repeat"> Clear</i>
+    </button>
+  </div>
+</div>
+<table class="table table-bordered table-striped table-hover table-condensed">
+  <thead>
+    <tr>
+      <th class="text-muted" (click)="sort('FirstName')">
+        Name
+        <span *ngIf="key=='FirstName'">
+          <i class="fa fa-sort"></i>
+        </span>
+      </th>
+      <th class="text-muted" (click)="sort('CompanyName')">
+        Company
+        <span *ngIf="key=='CompanyName'">
+          <i class="fa fa-sort"></i>
+        </span>
+      </th>
+      <th class="text-muted" (click)="sort('Region')">
+        Region
+        <span *ngIf="key=='Region'">
+          <i class="fa fa-sort"></i>
+        </span>
+      </th>
+      <th id="edit" class="text-muted" title="Edit"><i class="fa fa-pencil"></i></th>
+      <th id="delete" class="text-muted" title="Delete"><i class="fa fa-times"></i></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let contact of contactService.contacts | orderBy: key: reverse | filter: filter | paginate: {itemsPerPage: 5, currentPage: p}">
+      <td (click)="populateForm(contact)">
+        {{contact.FirstName}} {{contact.LastName}}
+      </td>
+      <td (click)="populateForm(contact)">
+        {{contact.CompanyName}}
+      </td>
+      <td (click)="populateForm(contact)">
+        {{contact.Region}}
+      </td>
+      <td title="Edit" (click)="populateForm(contact)">
+        <i class="fa fa-edit text-info"></i>
+      </td>
+      <td title="Delete" (click)="onDelete(contact.ContactID)">
+        <i class="fa fa-trash-o text-warning"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p=$event" boundaryLinks="true" directionLinks="true" maxSize="5" previousLabel="Prev"
+  nextLabel="Next"></pagination-controls>

@@ -1,0 +1,67 @@
+<div class="div-center">
+  <div class="row">
+    <div class="col div-center">
+      <h4 class="text-header">Employees</h4>
+      <hr />
+    </div>
+  </div>
+</div>
+<div class="row mb-2">
+  <div class="col-md-8 pb-2">
+    <input type="search" name="search" #search="ngModel" [(ngModel)]="filter" placeholder="Search Employees"
+      class="form-control">
+  </div>
+  <div class="col-md-4">
+    <button class="btn btn-block" type="button" (click)="clearSearch()" [disabled]="!filter">
+      <i class="fa fa-repeat"> Clear</i>
+    </button>
+  </div>
+</div>
+<table class="table table-bordered table-striped table-hover table-condensed">
+  <thead>
+    <tr>
+      <th class="text-muted" (click)="sort('FullName')">
+        Employee Name
+        <span *ngIf="key=='FullName'">
+          <i class="fa fa-sort"></i>
+        </span>
+      </th>
+      <th class="text-muted" (click)="sort('Position')">
+        Position
+        <span *ngIf="key=='Position'">
+          <i class="fa fa-sort"></i>
+        </span>
+      </th>
+      <th class="text-muted" (click)="sort('Rate')">
+        Rate
+        <span *ngIf="key=='Rate'">
+          <i class="fa fa-sort"></i>
+        </span>
+      </th>
+      <th id="edit" class="text-muted" title="Edit"><i class="fa fa-pencil"></i></th>
+      <th id="delete" class="text-muted" title="Delete"><i class="fa fa-times"></i></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let employee of employeeService.employees | orderBy: key: reverse | filter: filter | paginate: {itemsPerPage: 6, currentPage: p}">
+      <td (click)="populateForm(employee)">
+        {{employee.FullName}}
+      </td>
+      <td (click)="populateForm(employee)">
+        {{employee.Position}}
+      </td>
+      <td (click)="populateForm(employee)">
+        {{employee.Rate | currency}}
+      </td>
+      <td title="Edit" (click)="populateForm(employee)">
+        <i class="fa fa-edit text-info"></i>
+      </td>
+      <td title="Delete" (click)="onDelete(employee.EmployeeID)">
+        <i class="fa fa-trash-o text-warning"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p=$event" boundaryLinks="true" directionLinks="true" maxSize="5" previousLabel="Prev"
+  nextLabel="Next"></pagination-controls>

@@ -1,0 +1,83 @@
+<div class="div-center">
+  <h4 class="text-header">Contact Details</h4>
+  <hr />
+</div>
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off" class="crud-form">
+  <input type="hidden" name="ContactID" #EmployeeID="ngModel" [(ngModel)]="contactService.contact.ContactID">
+  <div class="row mb-2">
+    <div class="col-md-8">
+      <label class="form-label">Company:</label>
+      <select appSelectRequiredValidator name="CompanyName" #CompanyName="ngModel"
+        [(ngModel)]="contactService.contact.CompanyName" required class="form-control">
+        <option value="-1">--Select--</option>
+        <option [value]="c.CompanyName" *ngFor="let c of companyService.companies">
+          {{c.CompanyName}}
+        </option>
+      </select>
+      <div class="validation-error" *ngIf="CompanyName.invalid && CompanyName.touched">Required
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Region:</label>
+      <select appSelectRequiredValidator name="Region" #Region="ngModel"
+        [(ngModel)]="contactService.contact.Region" required class="form-control">
+        <option value="-1">--Select--</option>
+        <option [value]="region" *ngFor="let region of contactService.regions">
+          {{region}}
+        </option>
+      </select>
+      <div class="validation-error" *ngIf="CompanyName.invalid && CompanyName.touched">Required
+      </div>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <label class="form-label">First Name:</label>
+      <input name="FirstName" #FirstName="ngModel" [(ngModel)]="contactService.contact.FirstName"
+        placeholder="First Name" required class="form-control">
+      <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">Required</div>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Last Name:</label>
+      <input name="LastName" #LastName="ngModel" [(ngModel)]="contactService.contact.LastName" placeholder="Last Name"
+        required class="form-control">
+      <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">Required</div>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <label class="form-label">Organization Number:</label>
+      <input name="OrganizationNumber" #OrganizationNumber="ngModel"
+        [(ngModel)]="contactService.contact.OrganizationNumber" placeholder="Organization Number" required
+        class="form-control">
+      <div class="validation-error" *ngIf="OrganizationNumber.invalid && OrganizationNumber.touched">Required</div>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Phone:</label>
+      <input mask="(000)-000-0000" name="Phone" #Phone="ngModel" [(ngModel)]="contactService.contact.Phone"
+        placeholder="Phone" required class="form-control">
+      <div class="validation-error" *ngIf="Phone.invalid && Phone.touched">Required</div>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col">
+      <label class="form-label">Email:</label>
+      <input type="email" name="EmailAddress" #EmailAddress="ngModel" [(ngModel)]="contactService.contact.EmailAddress"
+        placeholder="Email" required class="form-control" [email]="true">
+      <div class="validation-error" *ngIf="EmailAddress.invalid && EmailAddress.touched">Required</div>
+      <div class="validation-error" *ngIf="EmailAddress.touched && EmailAddress.errors?.email">Invalid email.</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 pb-2">
+      <button class="btn btn-block" type="submit" [disabled]="!form.valid">
+        <i class="fa fa-save"> Submit</i>
+      </button>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-block" type="button" (click)="resetForm(form)">
+        <i class="fa fa-repeat"> Reset</i>
+      </button>
+    </div>
+  </div>
+</form>
