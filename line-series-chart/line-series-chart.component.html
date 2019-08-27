@@ -1,0 +1,9 @@
+<div class="container">
+    <ejs-chart id="chart-container1" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+      [legendSettings]='legendSettings' [tooltip]='tooltip' [title]='title'>
+      <e-series-collection>
+        <e-series [dataSource]='chartData' type='Line' xName='month' yName='sales' name='Monthly Sales' [marker]='marker'>
+        </e-series>
+      </e-series-collection>
+    </ejs-chart>
+  </div>

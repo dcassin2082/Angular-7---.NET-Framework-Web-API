@@ -1,0 +1,153 @@
+body {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+footer {
+    background-color: #7e879c;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 35px;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+}
+
+input.form-control:focus{
+    box-shadow: none;
+}
+
+button[type=button].btn{
+    border-radius: 5px;
+    /* background-color: #04c582; */
+    /* background-color: #176280; */
+    /* background-color: #d1a84e; */
+    background-color: rgb(162, 181, 202);
+    color: #fff;
+}
+button[type=button].btn:enabled{
+    background-color: rgb(92, 123, 141);
+    color: #fff;
+}
+button[type=button].btn:hover:enabled{
+    background-color: #dfc786;
+}
+
+button[type=submit].btn{
+    border-radius: 5px;
+    background-color: rgb(109, 131, 114);
+    color: #fff;
+}
+
+button[type=submit].btn:enabled{
+    background-color: rgb(96, 196, 119);
+    background-color: #435f9c;
+    color: #fff;
+}
+
+button[type=submit].btn:hover:enabled{
+    background-color: #eca511;
+}
+
+div.validation-error {
+    color: red;
+}
+
+input.form-control,input.form-control:focus{
+    background-color: #fafafb;
+    color: #152e83;
+    border: 1px solid #9daac4;
+}
+
+th:hover, td:hover{
+    cursor: pointer;
+}
+
+th#edit:hover, th#delete:hover{
+    cursor: auto;
+}
+
+td{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+form.crud-form{
+    border-radius: 4% !important;
+    padding: 10px;
+  }
+
+form{
+    margin: 0px 16px;
+}
+
+div.form-group.required>label:first-child:after{
+    content:'*';
+    color: rgb(235, 16, 16);
+    padding-left: 5px;
+}
+
+div.form-group label:not(.text-danger){
+    /* color: #545d6a; */
+    /* color: #b7f1d1; */
+    color: #fafafb;
+    font-weight: 700;
+}
+
+div.form-group input.invalid{
+    border: 1px solid #dc3545 !important; 
+}
+ 
+ div.form-group label:first-child{
+    text-transform: uppercase;
+    font-size: 0.9rem;
+ }
+
+ li.dropdown:hover > .dropdown-menu {
+    display: block;
+ }
+
+.dropdown-menu{
+    background-color: #3f4149 !important;
+}
+
+.dropdown-item{
+    color: #fff !important;
+    background-color: #3f4149 !important;
+}
+
+.dropdown-item:hover{
+    background-color: #eca511 !important;
+}
+
+.div-center{
+    text-align: center;
+}
+
+.form-label{
+    color: #939bb4 !important;
+    text-transform: none !important;
+    font-size: 0.9rem;
+}
+
+.text-header{
+    color: #939bb4;
+    text-shadow: 1px 1px#907c91;
+}
+
+.bg-nav{
+    background: #435f9c !important;
+}
+
+  
+ 

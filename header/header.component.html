@@ -1,0 +1,61 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-nav">
+  <div class="container"><a class="navbar-brand" href="#/home">
+      <div class="spn-logo">
+        <p style="line-height:10px;word-spacing:-8px;"><span
+            style="font-family:Georgia;font-size:16px;color:#fff;font-style:normal;font-weight:bold;"> d <span
+              style="font-family:Georgia;font-size:20px;color:#fff;font-weight:bold;position:relative;top:10px;"> C
+            </span></span></p>
+      </div>
+    </a>
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+      class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span
+        class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" data-target=".navbar-collapse.show" data-toggle="collapse">
+          <a class="nav-link text-white" title="Home" [routerLink]='["home"]'>Home</a>
+        </li>
+        <li class="nav-item dropdown" data-target=".navbar-collapse.show" data-toggle="collapse">
+          <a aria-expanded="false" aria-haspopup="true" class="nav-link text-white dropdown-toggle"
+            data-toggle="dropdown" href="#" id="navbarDropdown" role="button"> Angular </a>
+          <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+            <a class="dropdown-item" title="Employees" [routerLink]='["employees"]'>Employees</a>
+            <a class="dropdown-item" title="Contacts" [routerLink]='["contacts"]'>Contacts</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown" data-target=".navbar-collapse.show" data-toggle="collapse">
+          <a aria-expanded="false" aria-haspopup="true" class="nav-link text-white dropdown-toggle"
+            data-toggle="dropdown" href="#" id="navbarDropdown" role="button"> Sync Fusion </a>
+          <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+            <a class="dropdown-item" title="Employees" [routerLink]='["line-series"]'>Line Series</a>
+            <a class="dropdown-item" title="Contacts" [routerLink]='["column"]'>Column</a>
+            <a class="dropdown-item" title="Contacts" [routerLink]='["trackball"]'>Trackball</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" title="Contacts" [routerLink]='["all-charts"]'>All Charts</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown" data-target=".navbar-collapse.show" data-toggle="collapse">
+          <a aria-expanded="false" aria-haspopup="true" class="nav-link text-white dropdown-toggle"
+            data-toggle="dropdown" href="#" id="navbarDropdown" role="button"> Poker </a>
+          <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+            <a class="dropdown-item" title="Game" [routerLink]='["game"]'>Double Bonus Poker</a>
+            <a class="dropdown-item" title="Contacts" [routerLink]='["contacts"]'>Deuces Wild Poker</a>
+            <a class="dropdown-item" title="Employees" [routerLink]='["employees"]'>Jacks or Better Poker</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 ng-untouched ng-pristine ng-valid" novalidate="">
+        <ul class="navbar-nav">
+          <li class="nav-item" data-target=".navbar-collapse.show" data-toggle="collapse"><a class="nav-link text-white"
+              href="https://twitter.com/home" target="_blank" title="Twitter"><i
+                class="fa fa-twitter text-white"></i></a></li>
+          <li class="nav-item" data-target=".navbar-collapse.show" data-toggle="collapse"><a class="nav-link text-white"
+              href="https://github.com/dcassin2082/" target="_blank" title="Github"><i
+                class="fa fa-github-square"></i></a></li>
+        </ul><input aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="search"><button
+          class="btn btn-search my-2 my-sm-0" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
