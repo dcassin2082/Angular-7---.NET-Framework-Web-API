@@ -1,0 +1,282 @@
+@media screen and (max-width: 414px) and (orientation: portrait){
+    tr, td{
+        line-height: 10px !important;
+        font-size: 8px !important;
+    }
+    .div-title, .div-result, .div-held{
+        line-height: 14px !important;
+    }
+    .div-payline{
+        line-height: 3px !important;
+        padding-top: 3px !important;
+    }
+    .div-buttons{
+        line-height: 18px !important;
+    }
+    .div-buttons>input{
+        font-size: 14px;
+    }
+    .lbl-header, .lbl-credit, .lbl-bet{
+        font-size: 10px !important;
+    }
+    #lblResult{
+        font-size: 10px !important;
+    }
+    .lbl-held{
+        font-size: 10px !important;
+        width: 42px !important;
+    }
+    .div-buttons{
+        padding-bottom: 40px;
+    }
+    img{
+        width: 42px !important;
+        height: 56px !important;
+    }
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape){
+    tr, td{
+        line-height: 9px !important;
+        font-size: 8px !important;
+    }
+    .div-title, .div-result, .div-held{
+        line-height: 13px !important;
+    }
+    .div-payline{
+        line-height: 2px !important;
+        padding-top: 2px !important;
+    }
+    .div-buttons{
+        line-height: 13px !important;
+    }
+    .div-buttons>input{
+        font-size: 10px;
+    }
+    .lbl-header, .lbl-credit, .lbl-bet{
+        font-size: 9px !important;
+    }
+    #lblResult{
+        font-size: 9px !important;
+    }
+    .lbl-held{
+        font-size: 9px !important;
+        width: 60px !important;
+    }
+    img{
+        width: 60px !important;
+        height: 80px !important;
+    }
+}
+
+@media screen and (max-width: 666px) and (orientation: landscape){
+    tr, td{
+        line-height: 8px !important;
+        font-size: 7px !important;
+    }
+    .div-title, .div-result, .div-held{
+        line-height: 11px !important;
+    }
+    .div-payline{
+        line-height: 2px !important;
+        padding-top: 1px !important;
+    }
+    .div-buttons{
+        line-height: 11px !important;
+    }
+    .div-buttons>input{
+        font-size: 10px;
+    }
+    .lbl-header, .lbl-credit, .lbl-bet{
+        font-size: 8px !important;
+    }
+    #lblResult{
+        font-size: 8px !important;
+    }
+    .lbl-held{
+        font-size: 8px !important;
+        width: 39px !important;
+    }
+    img{
+        width: 39px !important;
+        height: 52px !important;
+    }
+}
+
+table {
+    background-color: #242448;
+    font-size: 12px;
+    border-bottom: solid 1px yellow;
+    border-top: solid 1px yellow;
+    margin-bottom: 0 !important;
+    border-spacing: 0 0;
+    padding: 0 0 0 0;
+}
+
+td {
+    text-align: center;
+    height: 0.1em;
+}
+
+tr{
+    color: yellow;
+}
+
+tr, td {
+    padding: 0 !important;
+    border-left: solid 1px !important;
+    border-right: solid 1px !important;
+    border-top: none !important;
+    font-weight: 700;
+    line-height: 12px;
+    font-size: 11px;
+}
+
+    td:nth-child(n + 1) {
+        text-align: center;
+    }
+
+    td:first-child {
+        text-align: left;
+        padding-left: 5px !important;
+        overflow: hidden;
+        position: relative;
+    }
+
+        td:first-child::after {
+            content: '';
+            position: absolute;
+            bottom: 2.2px;
+            width: 1500px;
+            height: 0px;
+            margin-left: 1.5px;
+            padding-top: 0;
+            border-bottom: 1px dotted yellow;
+        }
+
+        div.div-center {
+            text-align: center;
+            padding-bottom: 0;
+        }
+        
+        div.div-board {
+            background-color: #15458f;
+            border: solid 1px yellow;
+        }
+        
+        div.div-title{
+            background-color: #242448;
+        }
+
+input[type=button] {
+    background-color: yellow !important;
+    text-shadow: 0.2px 0.2px 0.2px black;
+    color: #01010d !important;
+    font-weight: bolder;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    margin-left: 2px;
+    border: solid 1px #ffd800 !important;
+    border-radius: 2px !important;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type=button]:hover{
+    color:white !important;
+    background-color: red !important;
+    outline-color: white !important;
+}
+
+input[type=button]:disabled{
+    opacity: 0.3 !important;
+    cursor: auto !important;
+}
+
+input[type=button]:disabled:hover{
+    opacity: 0.3 !important;
+    background-color: grey !important;
+    color:white !important;
+}
+
+img{
+    height: 160px;
+    width: 120px;
+}
+
+.img-clickable {
+    pointer-events: all !important;
+}
+
+.img-unclickable {
+    pointer-events: none;
+}
+
+.lbl-bet {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 0 !important;
+    padding-right: 10% !important;
+    padding-left: 14% !important;
+    text-align: center;
+}
+
+.lbl-credit {
+    color: yellow;
+    text-shadow: 1px 1px 1px #000;
+    font-size: small;
+    font-weight: bolder;
+    margin-bottom: 0 !important;
+}
+
+.lbl-header {
+    color: red !important;
+    text-shadow: -0.5px -0.5px 0 yellow, 0.5px -0.5px 0 yellow, -0.5px 0.5px 0 yellow, 0.5px 0.5px 0 yellow;
+    font-weight: bold;
+}
+
+.lbl-held {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 0 !important;
+    width: 120px;
+}
+
+.lbl-result {
+    font-size: 20px !important;
+    color: yellow !important;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    font-weight: 600;
+}
+
+.tr-white {
+    color: white !important;
+}
+
+.tr-yellow {
+    color: yellow !important;
+}
+
+/* card-overlay message (optional) */
+.lbl-msg {
+    font-size: 12px !important;
+    color: red !important;
+    text-shadow: -1px -1px 0 yellow, 1px -1px 0 yellow, -1px 1px 0 yellow, 1px 1px 0 yellow;
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid 2px #3154a5;
+    transform: skew(-10deg);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+

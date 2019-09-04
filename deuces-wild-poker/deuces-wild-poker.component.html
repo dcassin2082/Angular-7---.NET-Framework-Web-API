@@ -1,0 +1,80 @@
+<div class="container" ngcloak>
+    <div class="div-center">
+        <div class="div-title">
+            <span class="lbl-header">DEUCES WILD POKER</span>
+        </div>
+        <table class="table" id="tblPaytable">
+            <tr id="{{'tr-' + i}}" *ngFor="let item of paytable; let i = index;" [attr.data-index]="i">
+                <td class="td-0">
+                    {{item.Hand}}
+                </td>
+                <td class="td-1">
+                    {{item.Bet1Pays}}
+                </td>
+                <td class="td-2">
+                    {{item.Bet2Pays}}
+                </td>
+                <td class="td-3">
+                    {{item.Bet3Pays}}
+                </td>
+                <td class="td-4">
+                    {{item.Bet4Pays}}
+                </td>
+                <td class="td-5">
+                    {{item.Bet5Pays}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="div-center div-board">
+        <div class="row">
+            <div class="col">
+                <div class="div-result">
+                    <span id="lblResult" class="lbl-result">GAME OVER</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="div-held">
+                    <label id="hold0" class="lbl-held">HELD</label>
+                    <label id="hold1" class="lbl-held">HELD</label>
+                    <label id="hold2" class="lbl-held">HELD</label>
+                    <label id="hold3" class="lbl-held">HELD</label>
+                    <label id="hold4" class="lbl-held">HELD</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="{{src}}/b2fv.png" id="card0" class="card-img img-unclickable" (click)="hold($event)" />
+                <img src="{{src}}/b2fv.png" id="card1" class="card-img img-unclickable" (click)="hold($event)" />
+                <img src="{{src}}/b2fv.png" id="card2" class="card-img img-unclickable" (click)="hold($event)" />
+                <img src="{{src}}/b2fv.png" id="card3" class="card-img img-unclickable" (click)="hold($event)" />
+                <img src="{{src}}/b2fv.png" id="card4" class="card-img img-unclickable" (click)="hold($event)" />
+            </div>
+        </div>
+        <!--<label id="lblGameOver" class="lbl-msg centered">DOUBLE BONUS POKER</label>-->
+
+        <div class="div-payline">
+            <span class="lbl-credit">
+                WIN <label id="lblWinAmt">0</label>
+            </span>
+            <span class="lbl-bet">
+                BET <label ID="lblBet">5</label>
+            </span>
+            <span class="lbl-credit">
+                CREDIT <span id="lblCredits">{{credits}}</span>
+            </span>
+        </div>
+        <div class="row pb-2">
+            <div class="col">
+                <div class="div-buttons">
+                    <input type="button" id="btnBetAmt" (click)="changeBet()" value="BET">
+                    <input type="button" id="btnBetMax" value="BET MAX" (click)="betMax()">
+                    <input type="button" id="btnDealDraw" value="DEAL" (click)="dealDraw()" [disabled]="bet <= 0" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
