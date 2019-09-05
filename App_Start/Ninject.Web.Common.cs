@@ -123,9 +123,13 @@ namespace WebApi.App_Start
             kernel.Bind<IEmployeeService>().To<EmployeeService>();
             kernel.Bind<IContactService>().To<ContactService>();
             kernel.Bind<ICompanyService>().To<CompanyService>();
-            kernel.Bind<IGameService>().To<GameService>();
             kernel.Bind<IChartService>().To<ChartService>();
             kernel.Bind<IStateService>().To<StateService>();
+            kernel.Bind<IAccountService>().To<AccountService>();
+            kernel.Bind<IDoubleBonusService>().To<DoubleBonusService>();
+            kernel.Bind<IDeucesWildService>().To<DeucesWildService>();
+            kernel.Bind<IJokersWildService>().To<JokersWildService>();
+            kernel.Bind<IJacksOrBetterService>().To<JacksOrBetterService>();
         }
     }
 }
