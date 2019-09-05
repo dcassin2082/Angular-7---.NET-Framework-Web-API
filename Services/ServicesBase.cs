@@ -6,7 +6,7 @@ using WebApi.Models;
 
 namespace WebApi.Services
 {
-    public class ServicesBase : IDisposable
+    public abstract class ServicesBase : IDisposable
     {
         protected readonly SmartEntities dbContext;
 
