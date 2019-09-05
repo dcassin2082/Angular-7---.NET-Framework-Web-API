@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataManager, Query, ReturnOption } from '@syncfusion/ej2-data';
+import { UserService } from '../user/shared/user.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-column-chart',
@@ -8,10 +10,7 @@ import { DataManager, Query, ReturnOption } from '@syncfusion/ej2-data';
 })
 export class ColumnChartComponent implements OnInit {
 
-  constructor() { }
-
-  baseUrl = "https://localhost:44331/api/charts/column";
-
+  baseUrl: string = environment.production ? "http://dcassin5938-001-site1.ctempurl.com/api/charts/column" : "https://localhost:44331/api/charts/column" ;
   public legendSettings: Object;
   public tooltip: Object;
   public title: string;
@@ -22,8 +21,14 @@ export class ColumnChartComponent implements OnInit {
   public dataManager: DataManager = new DataManager({
     url: this.baseUrl
   });
-  // public query: Query = new Query().take(5).where('Estimate', 'lessThan', 3, false);
+
+  constructor(private service: UserService) { }
+
   ngOnInit(): void {
+    if (localStorage.getItem('token') !== null) {
+      this.service.loggedIn = true;
+    }
+
     this.dataManager.executeQuery(new Query().take(30)).then((e: ReturnOption) => {
       this.items = e.result as object[];
     }).catch((e) => true);
