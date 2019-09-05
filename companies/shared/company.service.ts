@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Company } from './company.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class CompanyService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = "https://localhost:44331/api/companies";
+  baseUrl: string = environment.production ? "http://dcassin5938-001-site1.ctempurl.com/api/companies" : "https://localhost:44331/api/companies" ;
   company: Company;
   companies: Company[];
 
