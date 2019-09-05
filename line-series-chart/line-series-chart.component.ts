@@ -1,21 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { DataManager, Query, ReturnOption } from '@syncfusion/ej2-data';
+import { UserService } from '../user/shared/user.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'app-line-series-chart',
     templateUrl: './line-series-chart.component.html',
-    // template:
-    //   `<ejs-chart id="chart-container" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-    // [legendSettings]='legendSettings' [tooltip]='tooltip' [title]='title'>
-    //     <e-series-collection>
-    //         <e-series [dataSource]='chartData' type='Line' xName='month' yName='sales' name='Sales' [marker]='marker'></e-series>
-    //     </e-series-collection>
-    // </ejs-chart>`,
     styles: []
 })
 export class LineSeriesChartComponent implements OnInit {
 
-    baseUrl = "https://localhost:44331/api/charts/lineseries";
+    constructor(private service: UserService) { }
+
+    baseUrl: string = environment.production ? "http://dcassin5938-001-site1.ctempurl.com/api/charts/lineseries" : "https://localhost:44331/api/charts/lineseries" ;
     public primaryXAxis: Object;
     public chartData: Object[];
     public primaryYAxis: Object;
@@ -27,7 +24,9 @@ export class LineSeriesChartComponent implements OnInit {
         url: this.baseUrl
     });
     ngOnInit(): void {
-        // Tooltip for chart
+        if (localStorage.getItem('token') !== null) {
+            this.service.loggedIn = true;
+        }
         this.tooltip = {
             enable: true
         }
